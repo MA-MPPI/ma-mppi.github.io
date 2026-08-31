@@ -55,6 +55,14 @@
       color: #263451;
     }
 
+    .speed-note {
+      margin-left: 0.45rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #536079;
+      white-space: nowrap;
+    }
+
     .videos {
       display: flex;
       flex-direction: column;
@@ -76,6 +84,24 @@
       text-align: center;
     }
 
+    .speed-button {
+      display: block;
+      margin: 1rem auto 0;
+      padding: 0.5rem 0.9rem;
+      border: 1px solid #b7c4da;
+      border-radius: 0.45rem;
+      background: #f5f7fb;
+      color: #263451;
+      font: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .speed-button:hover,
+    .speed-button:focus-visible {
+      background: #e8eef8;
+    }
+
     video {
       display: block;
       width: 100%;
@@ -90,59 +116,156 @@
     <h1>MA-MPPI</h1>
     <p>Anonymous supplementary videos</p>
 
-    <section class="group" aria-labelledby="clutter1-title">
-      <h2 id="clutter1-title">Clutter 1</h2>
+    <section class="group" aria-labelledby="utrap-escape-title">
+      <h2 id="utrap-escape-title">U-trap escape <span class="speed-note">×1.5 speed</span></h2>
       <div class="videos">
-      <figure>
-        <video controls preload="metadata">
-          <source src="video_1.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-        <figcaption>MA-MPPI</figcaption>
-      </figure>
-      <figure>
-        <video controls preload="metadata">
-          <source src="video_2.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-        <figcaption>RL-MPPI</figcaption>
-      </figure>
-      <figure>
-        <video controls preload="metadata">
-          <source src="video_3.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-        <figcaption>Vanilla MPPI</figcaption>
-      </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="HUIMA.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>MA-MPPI:Success</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="HUIRL.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>RL-MPPI:Stagnation</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="HUIVA.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>Vanilla MPPI:Collision</figcaption>
+        </figure>
       </div>
+      <button class="speed-button" type="button" data-rate="2">×2 speed</button>
+    </section>
+
+    <section class="group" aria-labelledby="utrap-entry-title">
+      <h2 id="utrap-entry-title">U-trap entry <span class="speed-note">×1.5 speed</span></h2>
+      <div class="videos">
+        <figure>
+          <video controls preload="metadata">
+            <source src="HUOMA.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>MA-MPPI:Success</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="HUORL.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>RL-MPPI:Stagnation</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="HUOVA.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>Vanilla MPPI:Stagnation</figcaption>
+        </figure>
+      </div>
+      <button class="speed-button" type="button" data-rate="2">×2 speed</button>
+    </section>
+
+    <section class="group" aria-labelledby="passage-title">
+      <h2 id="passage-title">Constrained passage <span class="speed-note">×1.5 speed</span></h2>
+      <div class="videos">
+        <figure>
+          <video controls preload="metadata">
+            <source src="HPMA.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>MA-MPPI:Success</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="HPRL.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>RL-MPPI:Stagnation and Collision</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="HPVA.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>Vanilla MPPI:Stagnation</figcaption>
+        </figure>
+      </div>
+      <button class="speed-button" type="button" data-rate="2">×2 speed</button>
+    </section>
+
+    <section class="group" aria-labelledby="clutter1-title">
+      <h2 id="clutter1-title">Clutter 1 <span class="speed-note">×1.5 speed</span></h2>
+      <div class="videos">
+        <figure>
+          <video controls preload="metadata">
+            <source src="video_1.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>MA-MPPI:Success</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="video_2.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>RL-MPPI:Stagnation</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="video_3.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>Vanilla MPPI:Collision</figcaption>
+        </figure>
+      </div>
+      <button class="speed-button" type="button" data-rate="2">×2 speed</button>
     </section>
 
     <section class="group" aria-labelledby="clutter2-title">
-      <h2 id="clutter2-title">Clutter 2</h2>
+      <h2 id="clutter2-title">Clutter 2 <span class="speed-note">×1.5 speed</span></h2>
       <div class="videos">
-      <figure>
-        <video controls preload="metadata">
-          <source src="video_4.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-        <figcaption>MA-MPPI</figcaption>
-      </figure>
-      <figure>
-        <video controls preload="metadata">
-          <source src="video_5.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-        <figcaption>RL-MPPI</figcaption>
-      </figure>
-      <figure>
-        <video controls preload="metadata">
-          <source src="video_6.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-        <figcaption>Vanilla MPPI</figcaption>
-      </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="video_4.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>MA-MPPI:Success</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="video_5.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>RL-MPPI:Stagnation</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="metadata">
+            <source src="video_6.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <figcaption>Vanilla MPPI:Collision</figcaption>
+        </figure>
       </div>
+      <button class="speed-button" type="button" data-rate="2">×2 speed</button>
     </section>
   </main>
+  <script>
+    document.querySelectorAll('.speed-button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const rate = Number(button.dataset.rate);
+        const group = button.closest('.group');
+        group.querySelectorAll('video').forEach((video) => {
+          video.playbackRate = rate;
+        });
+      });
+    });
+  </script>
 </body>
 </html>

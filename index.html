@@ -45,9 +45,19 @@
       color: #536079;
     }
 
+    .group {
+      margin-top: 2rem;
+    }
+
+    .group h2 {
+      margin: 0 0 1rem;
+      font-size: 1.35rem;
+      color: #263451;
+    }
+
     .videos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 1.25rem;
     }
 
@@ -60,9 +70,10 @@
     }
 
     figcaption {
-      margin: 0 0 0.6rem;
+      margin: 0.7rem 0 0;
       color: #263451;
       font-weight: 600;
+      text-align: center;
     }
 
     video {
@@ -79,49 +90,58 @@
     <h1>MA-MPPI</h1>
     <p>Anonymous supplementary videos</p>
 
-    <section class="videos" aria-label="Supplementary videos">
+    <section class="group" aria-labelledby="clutter1-title">
+      <h2 id="clutter1-title">Clutter 1</h2>
+      <div class="videos">
       <figure>
-        <figcaption>Video 1</figcaption>
         <video controls preload="metadata">
           <source src="video_1.mp4" type="video/mp4">
           Your browser does not support video playback.
         </video>
+        <figcaption>a</figcaption>
       </figure>
       <figure>
-        <figcaption>Video 2</figcaption>
         <video controls preload="metadata">
           <source src="video_2.mp4" type="video/mp4">
           Your browser does not support video playback.
         </video>
+        <figcaption>b</figcaption>
       </figure>
       <figure>
-        <figcaption>Video 3</figcaption>
         <video controls preload="metadata">
           <source src="video_3.mp4" type="video/mp4">
           Your browser does not support video playback.
         </video>
+        <figcaption>c</figcaption>
       </figure>
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="clutter2-title">
+      <h2 id="clutter2-title">Clutter 2</h2>
+      <div class="videos">
       <figure>
-        <figcaption>Video 4</figcaption>
         <video controls preload="metadata">
           <source src="video_4.mp4" type="video/mp4">
           Your browser does not support video playback.
         </video>
+        <figcaption>a</figcaption>
       </figure>
       <figure>
-        <figcaption>Video 5</figcaption>
         <video controls preload="metadata">
           <source src="video_5.mp4" type="video/mp4">
           Your browser does not support video playback.
         </video>
+        <figcaption>b</figcaption>
       </figure>
       <figure>
-        <figcaption>Video 6</figcaption>
         <video controls preload="metadata">
           <source src="video_6.mp4" type="video/mp4">
           Your browser does not support video playback.
         </video>
+        <figcaption>c</figcaption>
       </figure>
+      </div>
     </section>
   </main>
 </body>

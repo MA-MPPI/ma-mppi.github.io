@@ -59,11 +59,14 @@ const tabs = [...document.querySelectorAll('.video-tabs [role="tab"]')];
 const panels = [...document.querySelectorAll('.video-panel')];
 const playAllButton = document.querySelector('#play-all');
 const speedControl = document.querySelector('#playback-rate');
+// The supplied clips already run at 1.5× real time; do not speed them up again by default.
+const sourceVideoSpeed = 1.5;
 const status = document.querySelector('#video-status');
 let activePanel = panels[0];
 let operation = 0;
 
 function selectedVideos() { return [...activePanel.querySelectorAll('video')]; }
+function selectedPlaybackRate() { return Number(speedControl.value) / sourceVideoSpeed; }
 function updatePlaybackButton() {
   const playing = selectedVideos().some(video => !video.paused && !video.ended);
   playAllButton.textContent = playing ? 'Ⅱ Pause all' : '▶ Play all';
@@ -84,7 +87,7 @@ function activateTab(tab, focus = false) {
     item.tabIndex = selected ? 0 : -1;
   });
   activePanel = document.getElementById(tab.getAttribute('aria-controls'));
-  selectedVideos().forEach(video => { video.playbackRate = Number(speedControl.value); });
+  selectedVideos().forEach(video => { video.playbackRate = selectedPlaybackRate(); });
   document.querySelector('#scenario-description').textContent = activePanel.dataset.description;
   status.textContent = '';
   updatePlaybackButton();
@@ -111,7 +114,7 @@ async function startSelectedVideos() {
   status.textContent = '';
   const results = await Promise.allSettled(videos.map(video => {
     if (video.ended) video.currentTime = 0;
-    video.playbackRate = Number(speedControl.value);
+    video.playbackRate = selectedPlaybackRate();
     return video.play();
   }));
   if (currentOperation !== operation) return;
@@ -133,7 +136,7 @@ document.querySelector('#restart-all').addEventListener('click', () => {
   startSelectedVideos();
 });
 speedControl.addEventListener('change', () => {
-  selectedVideos().forEach(video => { video.playbackRate = Number(speedControl.value); });
+  selectedVideos().forEach(video => { video.playbackRate = selectedPlaybackRate(); });
 });
 document.querySelectorAll('.video-card video').forEach(video => {
   ['play','pause','ended'].forEach(name => video.addEventListener(name, updatePlaybackButton));

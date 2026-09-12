@@ -60,15 +60,16 @@
           <button class="tool-button" id="play-all" type="button">▶ Play all</button>
           <button class="tool-button" id="restart-all" type="button" aria-label="Restart all three selected videos">↺ Restart</button>
           <label class="speed-control">Speed
-            <select id="playback-rate" aria-label="Video playback speed">
-              <option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="0.5">0.5×</option>
+            <select id="playback-rate" aria-label="Video speed relative to real time" aria-describedby="source-speed-note">
+              <option value="1">1×</option><option value="1.5" selected>1.5×</option><option value="2">2×</option><option value="3">3×</option>
             </select>
           </label>
         </div>
       </div>
+      <p class="source-speed-note" id="source-speed-note">Original clips are at 1.5× real time. Speed settings are relative to real time.</p>
       <div id="video-panels"></div>
       <p class="video-status" id="video-status" role="status" aria-live="polite"></p>
-      <p class="video-footnote">Camera views are paired with ROS 2 bag visualizations. Labels describe each clip; playback speed is relative to the supplied video files.</p>
+      <p class="video-footnote">Camera views are paired with ROS 2 bag visualizations. Outcome labels describe each clip.</p>
       <noscript>
         <p>Enable JavaScript to switch scenes. Direct clips:</p>
         <p><a href="HPMA.mp4">MA-MPPI passage</a> · <a href="HPRL.mp4">RL-MPPI passage</a> · <a href="HPVA.mp4">Vanilla MPPI passage</a></p>

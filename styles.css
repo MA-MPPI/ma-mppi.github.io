@@ -15,7 +15,7 @@
 :root {
   --background: #fbf9f4;
   --ink: #354c43;
-  --muted: #747b70;
+  --muted: #4f5e52;
   --green: #58775f;
   --soft-green: #e9f0e3;
   --line: #e4e4d9;
@@ -47,7 +47,7 @@ img, video { display: block; width: 100%; height: auto; }
 .nav-links { display: flex; gap: 26px; font-size: 12px; color: var(--muted); }
 .nav-links a:hover, .nav-links a[aria-current] { color: var(--ink); }
 .intro { padding: 25px 0 37px; text-align: center; }
-.submission { font-size: 11px; color: #8c826f; }
+.submission { font-size: 11px; color: #665c49; }
 h1 { font-size: clamp(44px, 6.5vw, 65px); letter-spacing: -2px; font-weight: 700; line-height: 1.25; margin-top: 14px; color: var(--green); }
 .paper-title { max-width: 850px; margin: 17px auto 0; font-size: 20px; font-weight: 700; line-height: 1.65; letter-spacing: -.5px; }
 .intro-line { margin-top: 16px; font-size: 14px; color: var(--muted); }
@@ -59,7 +59,7 @@ h1 { font-size: clamp(44px, 6.5vw, 65px); letter-spacing: -2px; font-weight: 700
 h2 { font-size: 25px; font-weight: 700; line-height: 1.5; letter-spacing: -.6px; }
 .section-heading p { font-size: 12px; color: var(--muted); margin-top: 7px; }
 .video-tabs { display: flex; justify-content: center; gap: 9px; padding: 3px 3px 9px; overflow-x: auto; scrollbar-width: thin; }
-.video-tabs button { flex-shrink: 0; padding: 10px 16px; border: 1px solid var(--line); border-radius: 22px; background: transparent; color: #6e7767; font-size: 11px; line-height: 1.6; transition: background .15s, border-color .15s; }
+.video-tabs button { flex-shrink: 0; padding: 10px 16px; border: 1px solid var(--line); border-radius: 22px; background: transparent; color: #4b5c47; font-size: 11px; line-height: 1.6; transition: background .15s, border-color .15s; }
 .video-tabs button[aria-selected="true"] { background: #e8eddd; border-color: #a5b891; color: #405d40; font-weight: 700; }
 .video-tabs button:hover:not([aria-selected="true"]) { background: #f1f0e8; }
 .video-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 0 20px; }
@@ -69,6 +69,8 @@ h2 { font-size: 25px; font-weight: 700; line-height: 1.5; letter-spacing: -.6px;
 .tool-button:hover { background: var(--soft-green); }
 .speed-control { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--muted); padding-left: 4px; }
 .speed-control select { border: 1px solid var(--line); border-radius: 9px; background: var(--white); padding: 7px 3px 7px 6px; font-size: 10px; min-height: 37px; }
+.source-speed-note { margin: -8px 0 18px; font-size: 10px; line-height: 1.8; color: var(--muted); }
+.submission, .trial-note, .source-speed-note, .method-tag, .outcome, .clip-original, .video-footnote { font-weight: 700; }
 .video-panel { display: grid; gap: 24px; }
 .video-card { min-width: 0; border: 1px solid var(--line); border-radius: 15px; background: var(--white); overflow: hidden; }
 .video-card.ours { border-color: #afbd9b; }
@@ -78,17 +80,17 @@ h2 { font-size: 25px; font-weight: 700; line-height: 1.5; letter-spacing: -.6px;
 .video-card h3 { font-size: 17px; line-height: 1.5; font-weight: 700; order: -1; }
 .method-tag { font-size: 10px; color: var(--muted); }
 .outcome { flex-shrink: 0; font-size: 10px; line-height: 1.6; padding: 5px 10px; border-radius: 20px; }
-.outcome.success { color: #527245; background: #e2edcf; }
-.outcome.stalled { color: #897445; background: #f5eddb; }
-.outcome.failure { color: #a06c5b; background: #f8e9e1; }
+.outcome.success { color: #3e5c32; background: #e2edcf; }
+.outcome.stalled { color: #70511d; background: #f5eddb; }
+.outcome.failure { color: #824737; background: #f8e9e1; }
 .video-card video { aspect-ratio: 32 / 9; background: #20251e; object-fit: contain; }
 .clip-original { display: block; text-align: right; padding: 5px 13px; font-size: 9px; color: var(--muted); }
 .clip-original:hover { text-decoration: underline; color: var(--ink); }
 .video-status:empty { display: none; }
-.video-status { margin-top: 16px; color: #a0644f; font-size: 12px; }
+.video-status { margin-top: 16px; color: #824737; font-size: 12px; }
 .video-footnote { max-width: 850px; font-size: 10px; line-height: 1.8; color: var(--muted); margin: 18px auto 0; text-align: center; }
 .about-section { border-top: 1px solid var(--line); margin-top: 47px; padding: 35px 0 25px; }
-.about-section > p { max-width: 850px; font-size: 13px; line-height: 1.95; margin-top: 15px; color: #727c6e; }
+.about-section > p { max-width: 850px; font-size: 13px; line-height: 1.95; margin-top: 15px; color: var(--muted); }
 .about-section .about-hardware { font-size: 12px; margin-bottom: 24px; }
 .more-detail { border-top: 1px solid var(--line); }
 .more-detail:last-child { border-bottom: 1px solid var(--line); }

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#fbf9f4">
+  <meta name="description" content="Watch MA-MPPI navigate real-world passages, traps, and clutter on a Unitree G1. Anonymous supplementary videos for ICRA 2027.">
+  <meta property="og:title" content="MA-MPPI · Real-world robot demos">
+  <meta property="og:description" content="Myopia-Aware MPPI with Adaptive Learned Behavior Prior for Mapless Navigation. See the Unitree G1 demonstrations.">
+  <meta property="og:image" content="assets/posters/HPMA.webp">
+  <meta property="og:type" content="website">
+  <title>MA-MPPI · Robot demos</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/Comfortaa-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Comfortaa-Bold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header container">
+    <a class="brand" href="#top">MA-MPPI<span aria-hidden="true">✦</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#videos">Robot demos</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="intro container" id="top" aria-labelledby="page-title">
+      <p class="submission">ICRA 2027 · Anonymous submission</p>
+      <h1 id="page-title">MA-MPPI</h1>
+      <p class="paper-title">Myopia-Aware MPPI with Adaptive Learned Behavior Prior<br class="desktop-break"> for Mapless Navigation</p>
+      <p class="intro-line">Finding a way through, one detour at a time.</p>
+      <div class="hardware-highlights" aria-label="MA-MPPI hardware results">
+        <span><strong>13/14</strong> G1 tasks completed</span>
+        <span><strong>0</strong> recorded collisions</span>
+        <span><strong>60 Hz</strong> onboard commands</span>
+      </div>
+      <p class="trial-note">14 matched physical trials per controller on a Unitree G1.</p>
+    </section>
+
+    <section class="video-section container" id="videos" aria-labelledby="videos-title">
+      <div class="section-heading">
+        <h2 id="videos-title">Meet the robot in action</h2>
+        <p>Choose a scene to compare MA-MPPI, RL-MPPI, and Vanilla MPPI.</p>
+      </div>
+      <div class="video-tabs" role="tablist" aria-label="Demonstration scenario">
+        <button role="tab" id="tab-passage" aria-controls="panel-passage" aria-selected="true" tabindex="0">Constrained passage</button>
+        <button role="tab" id="tab-escape" aria-controls="panel-escape" aria-selected="false" tabindex="-1">U-trap escape</button>
+        <button role="tab" id="tab-entry" aria-controls="panel-entry" aria-selected="false" tabindex="-1">U-trap entry</button>
+        <button role="tab" id="tab-clutter1" aria-controls="panel-clutter1" aria-selected="false" tabindex="-1">Clutter 1</button>
+        <button role="tab" id="tab-clutter2" aria-controls="panel-clutter2" aria-selected="false" tabindex="-1">Clutter 2</button>
+      </div>
+      <div class="video-toolbar">
+        <p id="scenario-description">Successive turns through a constrained passage.</p>
+        <div class="video-tools">
+          <button class="tool-button" id="play-all" type="button">▶ Play all</button>
+          <button class="tool-button" id="restart-all" type="button" aria-label="Restart all three selected videos">↺ Restart</button>
+          <label class="speed-control">Speed
+            <select id="playback-rate" aria-label="Video playback speed">
+              <option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="0.5">0.5×</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div id="video-panels"></div>
+      <p class="video-status" id="video-status" role="status" aria-live="polite"></p>
+      <p class="video-footnote">Camera views are paired with ROS 2 bag visualizations. Labels describe each clip; playback speed is relative to the supplied video files.</p>
+      <noscript>
+        <p>Enable JavaScript to switch scenes. Direct clips:</p>
+        <p><a href="HPMA.mp4">MA-MPPI passage</a> · <a href="HPRL.mp4">RL-MPPI passage</a> · <a href="HPVA.mp4">Vanilla MPPI passage</a></p>
+        <p><a href="HUIMA.mp4">MA-MPPI escape</a> · <a href="HUIRL.mp4">RL-MPPI escape</a> · <a href="HUIVA.mp4">Vanilla MPPI escape</a></p>
+        <p><a href="HUOMA.mp4">MA-MPPI entry</a> · <a href="HUORL.mp4">RL-MPPI entry</a> · <a href="HUOVA.mp4">Vanilla MPPI entry</a></p>
+        <p><a href="video_1.mp4">MA-MPPI clutter 1</a> · <a href="video_2.mp4">RL-MPPI clutter 1</a> · <a href="video_3.mp4">Vanilla MPPI clutter 1</a></p>
+        <p><a href="video_4.mp4">MA-MPPI clutter 2</a> · <a href="video_5.mp4">RL-MPPI clutter 2</a> · <a href="video_6.mp4">Vanilla MPPI clutter 2</a></p>
+        <style>.video-tabs,.video-toolbar{display:none}</style>
+      </noscript>
+    </section>
+
+    <section class="about-section container" id="about" aria-labelledby="about-title">
+      <h2 id="about-title">A little about MA-MPPI</h2>
+      <p>Getting to a goal sometimes means moving away from it first. MA-MPPI adapts a learned behavior prior to help discover these detours, while MPPI evaluates the sampled motions and checks the robot’s footprint for collisions. Only the main MPPI commands the robot.</p>
+      <p class="about-hardware">The controller runs onboard a Unitree G1 with a Jetson Orin NX and Livox Mid-360, without policy retraining.</p>
+      <details class="more-detail" id="method">
+        <summary>How it works <span aria-hidden="true">+</span></summary>
+        <div class="detail-content">
+          <p>A controller-conditioned myopia score adjusts prior-centered sampling, behavior alignment, and the forward-speed bound.</p>
+          <a class="zoom-link" href="assets/overview.webp" data-lightbox data-caption="MA-MPPI architecture. The diagnostic MPPI provides evidence; only the main MPPI commands the robot." aria-label="Enlarge the MA-MPPI architecture">
+            <img src="assets/overview.webp" alt="Local observations and diagnostic MPPI feed a myopia estimator, which modulates learned guidance in the main MPPI." loading="lazy" width="2397" height="1245">
+          </a>
+          <p class="figure-hint">Click the figure to take a closer look.</p>
+        </div>
+      </details>
+      <details class="more-detail" id="simulation">
+        <summary>A quick look at simulation <span aria-hidden="true">+</span></summary>
+        <div class="detail-content">
+          <p>Across 450 held-out paired cases covering clutter, passages, and traps, MA-MPPI achieves 96.4% overall success, compared with 86.4% for the always-on γ = 1 prior.</p>
+          <a class="zoom-link" href="assets/simulation-trajectories.webp" data-lightbox data-caption="Representative simulation trajectories. Columns: clutter, constrained passage, trap. Rows: easy, medium, hard." aria-label="Enlarge the simulation trajectories">
+            <img src="assets/simulation-trajectories.webp" alt="Trajectories of five methods in nine representative simulation cases." loading="lazy" width="2481" height="1373">
+          </a>
+          <p class="figure-hint">Click the figure to compare trajectories.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+  <footer class="site-footer container">
+    <p>MA-MPPI · Anonymous supplementary videos</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+  <dialog class="media-dialog" id="media-dialog" aria-labelledby="dialog-caption">
+    <div class="dialog-toolbar"><p id="dialog-caption"></p><div><a id="dialog-original" href="assets/overview.webp" target="_blank" rel="noopener">Open image ↗</a><button id="dialog-close" type="button" aria-label="Close image viewer">✕</button></div></div>
+    <div class="dialog-content" id="dialog-content"></div>
+  </dialog>
+</body>
+</html>
